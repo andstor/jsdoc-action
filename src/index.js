@@ -1,6 +1,7 @@
 const core = require('@actions/core');
 const exec = require('@actions/exec');
 const fs = require('fs');
+const path = require('path');
 
 async function run() {
   try {
@@ -41,7 +42,9 @@ async function run() {
     args.push('-d', output_dir);
 
     core.info(`📝 Generating documentation`);
-    await exec.exec('"./node_modules/.bin/jsdoc', args);
+    const jsdocPath = path.join(__dirname, '../node_modules/.bin/jsdoc');
+    console.log(jsdocPath)
+    await exec.exec(jsdocPath, args);
 
     core.info(`🎉 Documentation 📖 has ben generated to the ${output_dir} folder 📁`);
   }
