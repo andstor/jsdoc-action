@@ -1441,6 +1441,7 @@ function isUnixExecutable(stats) {
 const core = __webpack_require__(470);
 const exec = __webpack_require__(986);
 const fs = __webpack_require__(747);
+const path = __webpack_require__(622);
 
 async function run() {
   try {
@@ -1481,7 +1482,9 @@ async function run() {
     args.push('-d', output_dir);
 
     core.info(`📝 Generating documentation`);
-    await exec.exec('"./node_modules/.bin/jsdoc', args);
+    const jsdocPath = __webpack_require__.ab + "jsdoc";
+    console.log(__webpack_require__.ab + "jsdoc")
+    await exec.exec(__webpack_require__.ab + "jsdoc", args);
 
     core.info(`🎉 Documentation 📖 has ben generated to the ${output_dir} folder 📁`);
   }
