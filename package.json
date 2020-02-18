@@ -31,6 +31,7 @@
   "homepage": "https://github.com/andstor/jsdoc-action#readme",
   "dependencies": {
     "@actions/core": "^1.1.1",
+    "@actions/exec": "^1.0.3",
     "jsdoc": "^3.6.3"
   },
   "devDependencies": {
