@@ -1,0 +1,17 @@
+name: 'JSDoc Action'
+description: 'GitHub Action to build JSDoc documentation'
+author: 'André Storhaug'
+inputs:
+  source_dir:
+    description: 'Source directory to build documentation from'
+    required: true
+  output_dir:
+    description: 'Output folder for the generated documentation'
+    default: './out'
+  config_file:
+    description: 'The path to a JSDoc configuration file'
+  template_dir:
+    description: 'Source directory to build documentation from'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
