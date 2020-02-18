@@ -1444,6 +1444,8 @@ const fs = __webpack_require__(747);
 
 async function run() {
   try {
+    console.log(process.env.GITHUB_WORKSPACE)
+    console.log(process.env)
     const source_dir = core.getInput('source_dir', { required: true });
     const output_dir = core.getInput('output_dir') || './out';
     const config_file = core.getInput('config_file');
@@ -1478,7 +1480,7 @@ async function run() {
     args.push('-d', output_dir);
 
     core.info(`📝 Generating documentation`);
-    await exec.exec('"node_modules/.bin/jsdoc"', args);
+    await exec.exec('"./node_modules/.bin/jsdoc', args);
 
     core.info(`🎉 Documentation 📖 has ben generated to the ${output_dir} folder 📁`);
   }
