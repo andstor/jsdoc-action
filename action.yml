@@ -1,6 +1,9 @@
 name: 'JSDoc Action'
 description: 'GitHub Action to build JSDoc documentation'
 author: 'André Storhaug'
+branding:
+  icon: 'file-text'  
+  color: 'yellow'
 inputs:
   source_dir:
     description: 'Source directory to build documentation from'
