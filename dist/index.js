@@ -1478,7 +1478,7 @@ async function run() {
     args.push('-d', output_dir);
 
     core.info(`📝 Generating documentation`);
-    await exec.exec('"./node_modules/.bin/jsdoc"', args);
+    await exec.exec('"node_modules/.bin/jsdoc"', args);
 
     core.info(`🎉 Documentation 📖 has ben generated to the ${output_dir} folder 📁`);
   }
