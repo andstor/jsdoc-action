@@ -1446,6 +1446,7 @@ async function run() {
   try {
     console.log(process.env.GITHUB_WORKSPACE)
     console.log(process.env)
+    console.log(__dirname);
     const source_dir = core.getInput('source_dir', { required: true });
     const output_dir = core.getInput('output_dir') || './out';
     const config_file = core.getInput('config_file');
