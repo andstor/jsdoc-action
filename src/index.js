@@ -46,20 +46,18 @@ async function run() {
     args.push('-d', output_dir);
 
     core.info(`📝 Generating documentation`);
-    const jsdocPath = path.join(__dirname + '../node_modules/.bin/jsdoc');
-    console.log(path.join(__dirname, 'node_modules/.bin/jsdoc'))
-    console.log(path.resolve(__dirname, 'node_modules/.bin/jsdoc'))
-    console.log(path.resolve(__dirname, 'lol/omg/node_modules/.bin/jsdoc'))
-    console.log(jsdocPath)
-    console.log('"' + jsdocPath + '"')
+    //const jsdocPath = path.join(__dirname + '../node_modules/.bin/jsdoc');
+    //console.log(path.join(__dirname, 'node_modules/.bin/jsdoc'))
+    //console.log(path.resolve(__dirname, 'node_modules/.bin/jsdoc'))
+    //console.log(path.resolve(__dirname, 'lol/omg/node_modules/.bin/jsdoc'))
     const nodePath = await io.which('node', true)
     const npmPath2 = await io.which('npm', true)
     const jsdocPath2= await io.which('jsdoc', true)
-    console.log(nodePath);
-    console.log(npmPath2);
-    console.log(jsdocPath2);
+    core.info(nodePath);
+    core.info(npmPath2);
+    core.info(jsdocPath2);
+    
     await exec.exec('"node_modules/.bin/jsdoc"', '' , {cwd: '/home/runner/work/_actions/andstor/jsdoc-action/test'} );
-
     core.info(`🎉 Documentation 📖 has ben generated to the ${output_dir} folder 📁`);
   }
   catch (error) {
