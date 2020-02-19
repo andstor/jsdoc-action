@@ -17,4 +17,4 @@ inputs:
     description: 'Source directory to build documentation from'
 runs:
   using: 'node12'
-  main: 'src/index.js'
+  main: 'index.js'
