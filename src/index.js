@@ -48,7 +48,7 @@ async function run() {
     console.log(path.resolve(__dirname, 'lol/omg/node_modules/.bin/jsdoc'))
     console.log(jsdocPath)
     console.log('"' + jsdocPath + '"')
-    await exec.exec('/home/runner/work/_actions/andstor/jsdoc-action/test/node_modules/.bin/jsdoc' );
+    await exec.exec('npx jsdoc' );
 
     core.info(`🎉 Documentation 📖 has ben generated to the ${output_dir} folder 📁`);
   }
