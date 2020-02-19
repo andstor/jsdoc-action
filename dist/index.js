@@ -1482,9 +1482,11 @@ async function run() {
     args.push('-d', output_dir);
 
     core.info(`📝 Generating documentation`);
-    const jsdocPath = __webpack_require__.ab + "jsdoc";
-    console.log(__webpack_require__.ab + "jsdoc")
-    await exec.exec(__webpack_require__.ab + "jsdoc", args);
+    const jsdocPath = __dirname + '../node_modules/.bin/jsdoc';
+    console.log(path.join(__dirname + 'node_modules/.bin/jsdoc'))
+    console.log(jsdocPath)
+    console.log('"' + jsdocPath + '"')
+    await exec.exec(jsdocPath, args);
 
     core.info(`🎉 Documentation 📖 has ben generated to the ${output_dir} folder 📁`);
   }
