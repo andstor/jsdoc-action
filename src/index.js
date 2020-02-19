@@ -8,8 +8,8 @@ async function run() {
   try {
     //console.log(process.env.GITHUB_WORKSPACE)
     //console.log(process.env)
+    
     console.log(__dirname);
-
     const GITHUB_WORKSPACE = process.env.GITHUB_WORKSPACE;
     const source_dir = core.getInput('source_dir', { required: true });
 
