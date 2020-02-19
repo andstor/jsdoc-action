@@ -62,11 +62,12 @@ async function run() {
     //core.info(`the path to jsdoc is ${jsdocPath2}`);
     core.info(`📝 Generating documentation`);
 
-    core.addPath(path.join(__dirname, 'node_modules/.bin/jsdoc'));
+    //core.addPath(path.join(__dirname, 'node_modules/.bin/jsdoc'));
 
     //await exec.exec('"../node_modules/.bin/jsdoc"', './src' , {cwd: __dirname} );
-    //await exec.exec('npx jsdoc', './src' , {cwd: __dirname} );
-    await exec.exec('jsdoc', './src' , {cwd: __dirname} );
+    await exec.exec('node node_modules/jsdoc/jsdoc.js', './src' , {cwd: __dirname} );
+    //await exec.exec('jsdoc', './src' , {cwd: __dirname} );
+    //await exec.exec('jsdoc');
     core.info(`🎉 Documentation 📖 has ben generated to the ${output_dir} folder 📁`);
   }
   catch (error) {
