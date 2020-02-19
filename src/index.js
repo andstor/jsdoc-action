@@ -52,10 +52,10 @@ async function run() {
     //console.log(path.resolve(__dirname, 'lol/omg/node_modules/.bin/jsdoc'))
     const nodePath = await io.which('node', true)
     const npmPath2 = await io.which('npm', true)
-    const jsdocPath2= await io.which('jsdoc', true)
+    //const jsdocPath2= await io.which('jsdoc', true)
     core.info(`the path to node is ${nodePath}`);
     core.info(`the path to npm is ${npmPath2}`);
-    core.info(`the path to jsdoc is ${jsdocPath2}`);
+    //core.info(`the path to jsdoc is ${jsdocPath2}`);
     
     await exec.exec('"../node_modules/.bin/jsdoc"', './src' , {cwd: __dirname} );
     core.info(`🎉 Documentation 📖 has ben generated to the ${output_dir} folder 📁`);
