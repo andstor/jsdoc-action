@@ -8,7 +8,10 @@ async function run() {
     console.log(process.env.GITHUB_WORKSPACE)
     console.log(process.env)
     console.log(__dirname);
+
+    const GITHUB_WORKSPACE = process.env.GITHUB_WORKSPACE;
     const source_dir = core.getInput('source_dir', { required: true });
+
     const output_dir = core.getInput('output_dir') || './out';
     const config_file = core.getInput('config_file');
     const template_dir = core.getInput('template_dir');
@@ -48,7 +51,7 @@ async function run() {
     console.log(path.resolve(__dirname, 'lol/omg/node_modules/.bin/jsdoc'))
     console.log(jsdocPath)
     console.log('"' + jsdocPath + '"')
-    await exec.exec('npx jsdoc' );
+    await exec.exec('npx jsdoc', '' , {cwd: '/home/runner/work/_actions/andstor/jsdoc-action/test2/'} );
 
     core.info(`🎉 Documentation 📖 has ben generated to the ${output_dir} folder 📁`);
   }
