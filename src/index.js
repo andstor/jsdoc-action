@@ -53,9 +53,9 @@ async function run() {
     const nodePath = await io.which('node', true)
     const npmPath2 = await io.which('npm', true)
     const jsdocPath2= await io.which('jsdoc', true)
-    core.info(nodePath);
-    core.info(npmPath2);
-    core.info(jsdocPath2);
+    core.info(`the path to node is ${nodePath}`);
+    core.info(`the path to npm is ${npmPath2}`);
+    core.info(`the path to jsdoc is ${jsdocPath2}`);
     
     await exec.exec('"node_modules/.bin/jsdoc"', '' , {cwd: '/home/runner/work/_actions/andstor/jsdoc-action/test'} );
     core.info(`🎉 Documentation 📖 has ben generated to the ${output_dir} folder 📁`);
