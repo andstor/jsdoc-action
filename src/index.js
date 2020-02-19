@@ -42,7 +42,7 @@ async function run() {
     args.push('-d', output_dir);
 
     core.info(`📝 Generating documentation`);
-    const jsdocPath = + '"' + __dirname + '/../node_modules/.bin/jsdoc' + '"';
+    const jsdocPath = path.join(__dirname + '../node_modules/.bin/jsdoc');
     console.log(path.join(__dirname, 'node_modules/.bin/jsdoc'))
     console.log(path.resolve(__dirname, 'node_modules/.bin/jsdoc'))
     console.log(path.resolve(__dirname, 'lol/omg/node_modules/.bin/jsdoc'))
