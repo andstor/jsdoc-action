@@ -10,7 +10,7 @@ async function run() {
     //console.log(process.env)
     
     console.log(__dirname);
-    const GITHUB_WORKSPACE = process.env.GITHUB_WORKSPACE;
+    process.env.GITHUB_WORKSPACE = __dirname;
     const source_dir = core.getInput('source_dir', { required: true });
 
     const output_dir = core.getInput('output_dir') || './out';
