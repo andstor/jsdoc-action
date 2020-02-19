@@ -53,10 +53,10 @@ async function run() {
     console.log(jsdocPath)
     console.log('"' + jsdocPath + '"')
     const nodePath = await io.which('node', true)
-    const npmPath = await io.which('npm', true)
+    const npmPath2 = await io.which('npm', true)
     const jsdocPath2= await io.which('jsdoc', true)
     console.log(nodePath);
-    console.log(npmPath);
+    console.log(npmPath2);
     console.log(jsdocPath2);
     await exec.exec('"node_modules/.bin/jsdoc"', '' , {cwd: '/home/runner/work/_actions/andstor/jsdoc-action/test'} );
 
