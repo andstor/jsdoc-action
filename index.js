@@ -48,7 +48,6 @@ async function run() {
     }
     args.push('-d', output_dir);
 
-    core.info(`📝 Generating documentation`);
     //const jsdocPath = path.join(__dirname + '../node_modules/.bin/jsdoc');
     //console.log(path.join(__dirname, 'node_modules/.bin/jsdoc'))
     //console.log(path.resolve(__dirname, 'node_modules/.bin/jsdoc'))
@@ -59,10 +58,15 @@ async function run() {
     core.info(`the path to node is ${nodePath}`);
     core.info(`the path to npm is ${npmPath2}`);
     core.info('OMG!');
+    core.info('dirname', __dirname);
     //core.info(`the path to jsdoc is ${jsdocPath2}`);
-    
+    core.info(`📝 Generating documentation`);
+
+    core.addPath(path.join(__dirname, 'node_modules/.bin/jsdoc'));
+
     //await exec.exec('"../node_modules/.bin/jsdoc"', './src' , {cwd: __dirname} );
-    await exec.exec('npx jsdoc', './src' , {cwd: __dirname} );
+    //await exec.exec('npx jsdoc', './src' , {cwd: __dirname} );
+    await exec.exec('jsdoc', './src' , {cwd: __dirname} );
     core.info(`🎉 Documentation 📖 has ben generated to the ${output_dir} folder 📁`);
   }
   catch (error) {
