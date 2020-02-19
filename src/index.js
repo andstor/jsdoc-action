@@ -6,8 +6,8 @@ const path = require('path');
 
 async function run() {
   try {
-    console.log(process.env.GITHUB_WORKSPACE)
-    console.log(process.env)
+    //console.log(process.env.GITHUB_WORKSPACE)
+    //console.log(process.env)
     console.log(__dirname);
 
     const GITHUB_WORKSPACE = process.env.GITHUB_WORKSPACE;
@@ -57,7 +57,7 @@ async function run() {
     core.info(`the path to npm is ${npmPath2}`);
     core.info(`the path to jsdoc is ${jsdocPath2}`);
     
-    await exec.exec('"node_modules/.bin/jsdoc"', '' , {cwd: '/home/runner/work/_actions/andstor/jsdoc-action/test'} );
+    await exec.exec('"../node_modules/.bin/jsdoc"', './src' , {cwd: __dirname} );
     core.info(`🎉 Documentation 📖 has ben generated to the ${output_dir} folder 📁`);
   }
   catch (error) {
