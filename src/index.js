@@ -57,7 +57,8 @@ async function run() {
     core.info(`the path to npm is ${npmPath2}`);
     //core.info(`the path to jsdoc is ${jsdocPath2}`);
     
-    await exec.exec('"../node_modules/.bin/jsdoc"', './src' , {cwd: __dirname} );
+    //await exec.exec('"../node_modules/.bin/jsdoc"', './src' , {cwd: __dirname} );
+    await exec.exec('npm ', './src' , {cwd: __dirname} );
     core.info(`🎉 Documentation 📖 has ben generated to the ${output_dir} folder 📁`);
   }
   catch (error) {
