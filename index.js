@@ -62,12 +62,17 @@ async function run() {
     //core.info(`the path to jsdoc is ${jsdocPath2}`);
     core.info(`📝 Generating documentation`);
 
-    //core.addPath(path.join(__dirname, 'node_modules/.bin/jsdoc'));
+    //core.addPath('node_modules/.bin/jsdoc');
 
-    //await exec.exec('"../node_modules/.bin/jsdoc"', './src' , {cwd: __dirname} );
-    await exec.exec('node node_modules/jsdoc/jsdoc.js', ['./src'] );
+    //await exec.exec('node node_modules/jsdoc/jsdoc.js', ['./src'] , {cwd: __dirname} );
+    //await exec.exec('node node_modules/jsdoc/jsdoc.js', ['./src'] , {cwd: __dirname} );
+    let jsdocPath = path.join(__dirname, 'node_modules/jsdoc/jsdoc.js');
+    await exec.exec(`"${jsdocPath}"`, './src' );
     //await exec.exec('jsdoc', './src' , {cwd: __dirname} );
     //await exec.exec('jsdoc');
+
+//    await exec.exec('node node_modules/jsdoc/jsdoc.js', ['./src'] , {cwd: __dirname} );
+
     core.info(`🎉 Documentation 📖 has ben generated to the ${output_dir} folder 📁`);
   }
   catch (error) {
