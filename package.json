@@ -2,7 +2,7 @@
   "name": "jsdoc-action",
   "version": "1.0.0",
   "description": "GitHub Action to build and publish JSDoc documentation to GitHub Pages",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "scripts": {
     "lint": "eslint index.js",
     "package": "ncc build src/index.js -o dist",
