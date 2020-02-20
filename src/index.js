@@ -40,13 +40,9 @@ async function run() {
     await io.mv(templatePath, templateDest, options);
 
 
-
-
-
-
     let args = []
     args.push(source_dir);
-    if (template_dir) {
+    if (config_file) {
       args.push('-c', config_file);
     }
     if (template_dir) {
