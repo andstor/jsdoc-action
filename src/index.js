@@ -42,7 +42,7 @@ async function run() {
 
 
     let args = []
-    args.push(source_dir);
+    args.push(path.join(GITHUB_WORKSPACE, source_dir));
     if (config_file) {
       args.push('-c', config_file);
     }
@@ -50,7 +50,7 @@ async function run() {
       templatePath = path.join(templatesPath, templateName);
       args.push('-t', './node_modules/ink-docstrap/template');
     }
-    args.push('-d', output_dir);
+    args.push('-d', path.join(GITHUB_WORKSPACE, output_dir));
 
     const jsdocPath = path.join(__dirname, '../node_modules/jsdoc/jsdoc.js');
 
