@@ -48,7 +48,7 @@ async function run() {
       args.push('-c', config_file);
     }
     if (template_dir) {
-      args.push('-t', templateDest);
+      args.push('-t', `${templateDest}/docdash`);
     }
     args.push('-d', output_dir);
 
