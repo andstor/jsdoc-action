@@ -1,19 +1,10 @@
 const core = require('@actions/core');
 const exec = require('@actions/exec');
-const io = require('@actions/io');
 const fs = require('fs');
 const path = require('path');
 
 async function run() {
   try {
-    //console.log(process.env.GITHUB_WORKSPACE)
-    //console.log(process.env)
-    
-    console.log(__dirname);
-    console.log(process.env.GITHUB_WORKSPACE)
-    //process.env.GITHUB_WORKSPACE = __dirname;
-    console.log(process.env.GITHUB_WORKSPACE)
-
     const source_dir = core.getInput('source_dir', { required: true });
 
     const output_dir = core.getInput('output_dir') || './out';
@@ -48,30 +39,10 @@ async function run() {
     }
     args.push('-d', output_dir);
 
-    //const jsdocPath = path.join(__dirname + '../node_modules/.bin/jsdoc');
-    //console.log(path.join(__dirname, 'node_modules/.bin/jsdoc'))
-    //console.log(path.resolve(__dirname, 'node_modules/.bin/jsdoc'))
-    //console.log(path.resolve(__dirname, 'lol/omg/node_modules/.bin/jsdoc'))
-    const nodePath = await io.which('node', true)
-    const npmPath2 = await io.which('npm', true)
-    //const jsdocPath2= await io.which('jsdoc', true)
-    core.info(`the path to node is ${nodePath}`);
-    core.info(`the path to npm is ${npmPath2}`);
-    core.info('OMG!');
-    core.info('dirname', __dirname);
-    //core.info(`the path to jsdoc is ${jsdocPath2}`);
-    core.info(`📝 Generating documentation`);
-
-    //core.addPath('node_modules/.bin/jsdoc');
-
-    //await exec.exec('node node_modules/jsdoc/jsdoc.js', ['./src'] , {cwd: __dirname} );
-    //await exec.exec('node node_modules/jsdoc/jsdoc.js', ['./src'] , {cwd: __dirname} );
     let jsdocPath = path.join(__dirname, 'node_modules/jsdoc/jsdoc.js');
-    await exec.exec(`node ${jsdocPath}`, './src' );
-    //await exec.exec('jsdoc', './src' , {cwd: __dirname} );
-    //await exec.exec('jsdoc');
 
-//    await exec.exec('node node_modules/jsdoc/jsdoc.js', ['./src'] , {cwd: __dirname} );
+    core.info(`📝 Generating documentation`);
+    await exec.exec(`node ${jsdocPath}`, args );
 
     core.info(`🎉 Documentation 📖 has ben generated to the ${output_dir} folder 📁`);
   }
