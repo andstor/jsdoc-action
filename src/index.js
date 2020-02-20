@@ -46,7 +46,7 @@ async function run() {
       args.push('-c', config_file);
     }
     if (template_dir) {
-      args.push('-t', template_dir);
+      args.push('-t', templateDest);
     }
     args.push('-d', output_dir);
 
