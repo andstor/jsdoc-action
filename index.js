@@ -11,7 +11,7 @@ async function run() {
     
     console.log(__dirname);
     console.log(process.env.GITHUB_WORKSPACE)
-    process.env.GITHUB_WORKSPACE = __dirname;
+    //process.env.GITHUB_WORKSPACE = __dirname;
     console.log(process.env.GITHUB_WORKSPACE)
 
     const source_dir = core.getInput('source_dir', { required: true });
@@ -67,7 +67,7 @@ async function run() {
     //await exec.exec('node node_modules/jsdoc/jsdoc.js', ['./src'] , {cwd: __dirname} );
     //await exec.exec('node node_modules/jsdoc/jsdoc.js', ['./src'] , {cwd: __dirname} );
     let jsdocPath = path.join(__dirname, 'node_modules/jsdoc/jsdoc.js');
-    await exec.exec(`"${jsdocPath}"`, './src' );
+    await exec.exec(`node ${jsdocPath}`, './src' );
     //await exec.exec('jsdoc', './src' , {cwd: __dirname} );
     //await exec.exec('jsdoc');
 
