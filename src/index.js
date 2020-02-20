@@ -35,8 +35,10 @@ async function run() {
 
     const options = { recursive: true, force: false }
     
-    let templatePath = path.join(GITHUB_WORKSPACE, template_dir)
-    let templateDest = path.join(__dirname, '../node_modules/jsdoc/templates/')
+    const templatePath = path.join(GITHUB_WORKSPACE, template_dir)
+    const templateDest = path.join(__dirname, '../node_modules/jsdoc/templates/')
+    core.info(templatePath)
+    core.info(templateDest)
     await io.mv(templatePath, templateDest, options);
 
 
@@ -50,7 +52,7 @@ async function run() {
     }
     args.push('-d', output_dir);
 
-    let jsdocPath = path.join(__dirname, '../node_modules/jsdoc/jsdoc.js');
+    const jsdocPath = path.join(__dirname, '../node_modules/jsdoc/jsdoc.js');
 
     core.info(`📝 Generating documentation`);
     await exec.exec(`node ${jsdocPath}`, args );
