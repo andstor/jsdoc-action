@@ -65,7 +65,7 @@ async function run() {
     //core.addPath(path.join(__dirname, 'node_modules/.bin/jsdoc'));
 
     //await exec.exec('"../node_modules/.bin/jsdoc"', './src' , {cwd: __dirname} );
-    await exec.exec('node node_modules/jsdoc/jsdoc.js', ['./src'] , {cwd: __dirname} );
+    await exec.exec('node node_modules/jsdoc/jsdoc.js', ['./src'] );
     //await exec.exec('jsdoc', './src' , {cwd: __dirname} );
     //await exec.exec('jsdoc');
     core.info(`🎉 Documentation 📖 has ben generated to the ${output_dir} folder 📁`);
