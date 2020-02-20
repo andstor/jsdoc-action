@@ -1,5 +1,6 @@
 const core = require('@actions/core');
 const exec = require('@actions/exec');
+const io = require('@actions/io');
 const fs = require('fs');
 const path = require('path');
 
@@ -28,6 +29,20 @@ async function run() {
         return;
       }
     }
+
+    const GITHUB_WORKSPACE = process.env.GITHUB_WORKSPACE;
+
+
+    const options = { recursive: true, force: false }
+    
+    let templatePath = path.join(GITHUB_WORKSPACE, template_dir)
+    let templateDest = path.join(__dirname, '../node_modules/')
+    await io.mv(templatePath, templateDest, options);
+
+
+
+
+
 
     let args = []
     args.push(source_dir);
