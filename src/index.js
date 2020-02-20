@@ -48,7 +48,7 @@ async function run() {
     }
     if (template_dir) {
       templatePath = path.join(templatesPath, templateName);
-      args.push('-t', templatePath);
+      args.push('-t', './node_modules/ink-docstrap/template');
     }
     args.push('-d', output_dir);
 
@@ -60,10 +60,10 @@ async function run() {
     let kok = path.join(GITHUB_WORKSPACE, template_dir, '../')
 
     //await exec.exec('npm i moment --production', [], {cwd: lol});
-    await exec.exec(`npm install ${kok} --production`, [], {cwd: lol});
+    await exec.exec(`npm install ink-docstrap --production`, [], {cwd: lol});
 
     core.info(`📝 Generating documentation`);
-    await exec.exec(`node ${jsdocPath}`, args );
+    await exec.exec(`node ${jsdocPath}`, args , {cwd: lol});
 
     core.info(`🎉 Documentation 📖 has ben generated to the ${output_dir} folder 📁`);
   }
