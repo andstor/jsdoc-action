@@ -58,6 +58,7 @@ async function run() {
     core.info(`installing dependencies`);
     let lol = path.join(__dirname, '../')
     await exec.exec('npm i moment --production', [], {cwd: lol});
+    await exec.exec('npm i sanitize-html --production', [], {cwd: lol});
 
     core.info(`📝 Generating documentation`);
     await exec.exec(`node ${jsdocPath}`, args );
