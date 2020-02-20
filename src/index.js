@@ -36,7 +36,7 @@ async function run() {
     const options = { recursive: true, force: false }
     
     let templatePath = path.join(GITHUB_WORKSPACE, template_dir)
-    let templateDest = path.join(__dirname, '../node_modules/')
+    let templateDest = path.join(__dirname, '../node_modules/jsdoc/templates/')
     await io.mv(templatePath, templateDest, options);
 
 
