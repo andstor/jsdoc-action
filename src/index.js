@@ -32,14 +32,13 @@ async function run() {
 
     const GITHUB_WORKSPACE = process.env.GITHUB_WORKSPACE;
 
+    const templateName = path.basename(template_dir);
 
     const options = { recursive: true, force: false }
     
-    const templatePath = path.join(GITHUB_WORKSPACE, template_dir)
-    const templateDest = path.join(__dirname, '../node_modules/jsdoc/templates')
-    core.info(templatePath)
-    core.info(templateDest)
-    await io.mv(templatePath, templateDest, options);
+    let templatePath = path.join(GITHUB_WORKSPACE, template_dir)
+    const templatesPath = path.join(__dirname, '../node_modules/jsdoc/templates')
+    await io.mv(templatePath, templatesPath, options);
 
 
     let args = []
@@ -48,7 +47,8 @@ async function run() {
       args.push('-c', config_file);
     }
     if (template_dir) {
-      args.push('-t', `${templateDest}/docdash`);
+      templatePath = path.join(templatesPath, templateName);
+      args.push('-t', templatePath);
     }
     args.push('-d', output_dir);
 
