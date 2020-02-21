@@ -17,6 +17,8 @@ inputs:
     description: 'The name of a JSDoc template to install'
   template_dir:
     description: 'The relative location of the template files within the template package'
+  front_page:
+    description: 'The path to a Markdown file to be used as a the front page'
 runs:
   using: 'node12'
   main: 'src/index.js'

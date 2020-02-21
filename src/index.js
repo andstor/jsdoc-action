@@ -35,6 +35,9 @@ async function run() {
     let cmd = 'node';
     let args = [jsdocPath, srcPath];
 
+    if (recursive) {
+      args.push('-r');
+    }
     if (config_file) {
       const configPath = path.join(GITHUB_WORKSPACE, config_file);
       args.push('-c', configPath);
@@ -42,6 +45,10 @@ async function run() {
     if (template_name) {
       const templatePath = path.join('./node_modules/', template_name, template_dir);
       args.push('-t', templatePath);
+    }
+    if (front_page) {
+      let readmePath = path.join(GITHUB_WORKSPACE, front_page);
+      args.push('-R', readmePath);
     }
     args.push('-d', path.join(GITHUB_WORKSPACE, output_dir));
 
