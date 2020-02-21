@@ -38,6 +38,7 @@ async function run() {
       let lol = path.join(__dirname, '../node_modules/ink-docstrap');
       await fs.promises.access(lol);
     } catch (error) {
+      let lol = path.join(__dirname, '../node_modules/ink-docstrap');
       core.setFailed(`⛔️ Source directory does not exist!: ${lol}`);
       return;
     }
