@@ -44,7 +44,7 @@ async function run() {
 
     const actionPath = path.join(__dirname, '../');
     core.info(`📝 Generating documentation`);
-    await exec.exec(cmd, args, { cwd: actionPath });
+    //await exec.exec(cmd, args, { cwd: actionPath });
     core.info(`🎉 Documentation 📖 has ben generated to the ${output_dir} folder 📁`);
   }
   catch (error) {
