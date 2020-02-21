@@ -31,7 +31,7 @@ async function run() {
 
 
     if (template_name) {
-      installer.install(template_name);
+      await installer.install(template_name);
     }
 
     try {
