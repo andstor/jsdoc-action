@@ -38,7 +38,7 @@ async function run() {
     }
     if (template_name) {
       const templatePath = path.join('./node_modules/', template_name, template_dir);
-      args.push('-t', './node_modules/ink-docstrap/template');
+      args.push('-t', path.join(__dirname, '../node_modules/ink-docstrap/template'));
     }
     args.push('-d', path.join(GITHUB_WORKSPACE, output_dir));
 
