@@ -35,6 +35,22 @@ async function run() {
     }
 
     try {
+      let lol = path.join(__dirname, '../node_modules');
+      await fs.promises.access(lol);
+    } catch (error) {
+      let lol = path.join(__dirname, '../node_modules');
+      core.setFailed(`⛔️ Source directory does not exist!: ${lol}`);
+      return;
+    }
+    try {
+      let lol = path.join(__dirname, '../node_modules/moment');
+      await fs.promises.access(lol);
+    } catch (error) {
+      let lol = path.join(__dirname, '../node_modules/moment');
+      core.setFailed(`⛔️ Source directory does not exist!: ${lol}`);
+      return;
+    }
+    try {
       let lol = path.join(__dirname, '../node_modules/ink-docstrap');
       await fs.promises.access(lol);
     } catch (error) {
