@@ -13,8 +13,10 @@ inputs:
     default: './out'
   config_file:
     description: 'The path to a JSDoc configuration file'
+  template_name:
+    description: 'The name of a JSDoc template to install'
   template_dir:
-    description: 'Source directory to build documentation from'
+    description: 'The relative location of the template files'
 runs:
   using: 'node12'
   main: 'src/index.js'
