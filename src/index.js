@@ -1,6 +1,5 @@
 const core = require('@actions/core');
 const exec = require('@actions/exec');
-const io = require('@actions/io');
 const fs = require('fs');
 const path = require('path');
 const installer = require('./installer');
@@ -24,39 +23,8 @@ async function run() {
       }
     }
 
-
-
-    
-
-
-
     if (template_name) {
       await installer.install(template_name);
-    }
-
-    try {
-      let lol = path.join(__dirname, '../node_modules');
-      await fs.promises.access(lol);
-    } catch (error) {
-      let lol = path.join(__dirname, '../node_modules');
-      core.setFailed(`⛔️ Source directory does not exist!: ${lol}`);
-      return;
-    }
-    try {
-      let lol = path.join(__dirname, '../node_modules/moment');
-      await fs.promises.access(lol);
-    } catch (error) {
-      let lol = path.join(__dirname, '../node_modules/moment');
-      core.setFailed(`⛔️ Source directory does not exist!: ${lol}`);
-      return;
-    }
-    try {
-      let lol = path.join(__dirname, '../node_modules/ink-docstrap');
-      await fs.promises.access(lol);
-    } catch (error) {
-      let lol = path.join(__dirname, '../node_modules/ink-docstrap');
-      core.setFailed(`⛔️ Source directory does not exist!: ${lol}`);
-      return;
     }
 
     const jsdocPath = path.join(__dirname, '../node_modules/jsdoc/jsdoc.js');
