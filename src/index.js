@@ -1,6 +1,5 @@
 const core = require('@actions/core');
 const exec = require('@actions/exec');
-const io = require('@actions/io');
 const fs = require('fs');
 const path = require('path');
 const installer = require('./installer');
@@ -39,7 +38,7 @@ async function run() {
     }
     if (template_name) {
       const templatePath = path.join('./node_modules/', template_name, template_dir);
-      args.push('-t', templatePath);
+      args.push('-t', './node_modules/ink-docstrap/template');
     }
     args.push('-d', path.join(GITHUB_WORKSPACE, output_dir));
 

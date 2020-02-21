@@ -16,7 +16,7 @@ inputs:
   template_name:
     description: 'The name of a JSDoc template to install'
   template_dir:
-    description: 'The relative location of the template files'
+    description: 'The relative location of the template files within the template package'
 runs:
   using: 'node12'
   main: 'src/index.js'
