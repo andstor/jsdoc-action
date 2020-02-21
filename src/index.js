@@ -31,7 +31,7 @@ async function run() {
     const srcPath = path.join(GITHUB_WORKSPACE, source_dir);
 
     let cmd = 'node';
-    let args = [jsdocPath, srcPath];
+    let args = [srcPath];
 
     if (config_file) {
       args.push('-c', config_file);
@@ -44,7 +44,7 @@ async function run() {
 
     const actionPath = path.join(__dirname, '../');
     core.info(`📝 Generating documentation`);
-    //await exec.exec(cmd, args, { cwd: actionPath });
+    await exec.exec(`node ${jsdocPath}`, args, { cwd: actionPath });
     core.info(`🎉 Documentation 📖 has ben generated to the ${output_dir} folder 📁`);
   }
   catch (error) {
