@@ -9,10 +9,12 @@ async function run() {
     const GITHUB_WORKSPACE = process.env.GITHUB_WORKSPACE;
 
     const source_dir = core.getInput('source_dir', { required: true });
+    const recursive = core.getInput('recursive') || true;
     const output_dir = core.getInput('output_dir') || './out';
     const config_file = core.getInput('config_file');
     const template_name = core.getInput('template_name');
     const template_dir = core.getInput('template_dir') || '';
+    const front_page = core.getInput('front_page');
 
     if (config_file) {
       try {
@@ -34,7 +36,8 @@ async function run() {
     let args = [jsdocPath, srcPath];
 
     if (config_file) {
-      args.push('-c', config_file);
+      const configPath = path.join(GITHUB_WORKSPACE, config_file);
+      args.push('-c', configPath);
     }
     if (template_name) {
       const templatePath = path.join('./node_modules/', template_name, template_dir);
