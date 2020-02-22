@@ -1,0 +1,41 @@
+{
+  "name": "jsdoc-action",
+  "version": "1.0.0",
+  "description": "GitHub Action to build JSDoc documentation",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "eslint src/index.js",
+    "test": "npm run lint && jest",
+    "jsdoc": "jsdoc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andstor/jsdoc-action.git"
+  },
+  "keywords": [
+    "GitHub",
+    "Actions",
+    "JSDoc",
+    "Documentation",
+    "JavaScript"
+  ],
+  "author": {
+    "name": "André Storhaug",
+    "email": "andr3.storhaug@gmail.com",
+    "url": "https://github.com/andstor"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/andstor/jsdoc-action/issues"
+  },
+  "homepage": "https://github.com/andstor/jsdoc-action#readme",
+  "dependencies": {
+    "@actions/core": "^1.1.1",
+    "@actions/exec": "^1.0.3",
+    "jsdoc": "^3.6.3"
+  },
+  "devDependencies": {
+    "eslint": "^6.3.0",
+    "jest": "^24.9.0"
+  }
+}
