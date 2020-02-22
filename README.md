@@ -24,7 +24,7 @@ The jsdoc-action is a JavaScript action and is supported on both Linux, MacOS an
 
 ## Templates 💅
 
-You can use JSDoc templates with this action.  
+You can use JSDoc [templates](https://github.com/jsdoc/jsdoc#templates) with this action.  
 Just set the `template_name` input variable to the name of the template you want to use. This needs to be template's package name.
 
 If the template's template files is located somewhere else than the package's root, you need to specify this. Set the `template_dir` input variable to the location of the template folder (contains a `publish.js` file).
