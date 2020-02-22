@@ -9,7 +9,7 @@ async function run() {
     const GITHUB_WORKSPACE = process.env.GITHUB_WORKSPACE;
 
     const source_dir = core.getInput('source_dir', { required: true });
-    const recursive = core.getInput('recursive') || true;
+    const recurse = core.getInput('recurse') || true;
     const output_dir = core.getInput('output_dir') || './out';
     const config_file = core.getInput('config_file');
     const template_name = core.getInput('template_name');
@@ -35,7 +35,7 @@ async function run() {
     let cmd = 'node';
     let args = [jsdocPath, srcPath];
 
-    if (recursive) {
+    if (recurse) {
       args.push('-r');
     }
     if (config_file) {

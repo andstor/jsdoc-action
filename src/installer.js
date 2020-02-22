@@ -10,7 +10,7 @@ async function install(template_name) {
 
     core.info(`Installing JSDoc template: ${template_name}`);
     await exec.exec(cmd, args, { cwd: actionDir });
-    core.debug(`command: ${cmd} ${args}`);
+    core.info(`Command: ${cmd} ${args}`);
 }
 
 module.exports.install = install;

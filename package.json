@@ -1,12 +1,11 @@
 {
   "name": "jsdoc-action",
   "version": "1.0.0",
-  "description": "GitHub Action to build and publish JSDoc documentation to GitHub Pages",
-  "main": "dist/index.js",
+  "description": "GitHub Action to build JSDoc documentation",
+  "main": "src/index.js",
   "scripts": {
-    "lint": "eslint index.js",
-    "package": "ncc build src/index.js -o dist",
-    "test": "eslint src/index.js && jest",
+    "lint": "eslint src/index.js",
+    "test": "npm run lint && jest",
     "jsdoc": "jsdoc"
   },
   "repository": {
@@ -25,7 +24,7 @@
     "email": "andr3.storhaug@gmail.com",
     "url": "https://github.com/andstor"
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/andstor/jsdoc-action/issues"
   },
@@ -36,7 +35,6 @@
     "jsdoc": "^3.6.3"
   },
   "devDependencies": {
-    "@zeit/ncc": "^0.20.5",
     "eslint": "^6.3.0",
     "jest": "^24.9.0"
   }
