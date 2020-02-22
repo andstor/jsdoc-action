@@ -22,7 +22,7 @@ The jsdoc-action is a JavaScript action and is supported on both Linux, MacOS an
 |---|:---:|:---:|:---:|
 | Support | ✅️ | ✅️ | ✅️ |
 
-## Options
+## Options ⚙️
 
 The following input variables options can/must be configured:
 
@@ -45,7 +45,7 @@ If the template's template files is located somewhere else than the package's ro
 
 For example, to use the JSDoc [DocStrap](https://github.com/docstrap/docstrap) template, set the `template_name` to `ink-docstrap` and the `template_dir` to `template`.
 
-## JSDoc Configuration file
+## JSDoc Configuration file 📄
 
 To use a JSDoc [configuration file](https://jsdoc.app/about-configuring-jsdoc.html) located in your repository, you will need to specify the path to the file in the `config_file` input variable. Normally, if you use the [actions/checkout](https://github.com/actions/checkout), this will just resolve to `conf.json` or `conf.js`.
 
@@ -70,7 +70,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
       - name: Build
         uses: andstor/jsdoc-action@v1
