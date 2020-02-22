@@ -16,7 +16,11 @@ The following example step will generate documentation for all source files in t
 
 ## Supported platforms
 
-The jsdoc-action is a JavaScript action and is supported on both **Linux**, **MacOS** and **Windows**.
+The jsdoc-action is a JavaScript action and is supported on both Linux, MacOS and Windows.
+
+| OS (runs-on) | ubuntu-latest | macos-latest | windows-latest |
+|---|:---:|:---:|:---:|
+| Support | ✅️ | ✅️ | ✅️ |
 
 ## Templates 💅
 
@@ -80,5 +84,6 @@ jobs:
 
 ## License
 
-Copyright © 2020 [André Storhaug](https://github.com/andstor)  
+Copyright © 2020 [André Storhaug](https://github.com/andstor)
+
 The jsdoc-action GitHub action is licensed under the Apache License, Version 2.0. See the [LICENSE](https://github.com/andstor/jsdoc-action/blob/master/LICENSE) file for more information.
