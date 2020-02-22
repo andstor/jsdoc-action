@@ -10,11 +10,24 @@ inputs:
     required: true
   output_dir:
     description: 'Output folder for the generated documentation'
+    required: false
     default: './out'
+  recurse:
+    description: 'Recurse into subdirectories when scanning for source files'
+    required: false
+    default: true
   config_file:
     description: 'The path to a JSDoc configuration file'
+    required: false
+  template_name:
+    description: 'The name of a JSDoc template to install'
+    required: false
   template_dir:
-    description: 'Source directory to build documentation from'
+    description: 'The relative location of the template files within the template package'
+    required: false
+  front_page:
+    description: 'The path to a Markdown file to be used as a the front page'
+    required: false
 runs:
   using: 'node12'
-  main: 'dist/index.js'
+  main: 'src/index.js'
