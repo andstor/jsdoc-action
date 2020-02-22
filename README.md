@@ -86,4 +86,5 @@ jobs:
 
 Copyright © 2020 [André Storhaug](https://github.com/andstor)
 
-The jsdoc-action GitHub action is licensed under the Apache License, Version 2.0. See the [LICENSE](https://github.com/andstor/jsdoc-action/blob/master/LICENSE) file for more information.
+The jsdoc-action GitHub action is licensed under the Apache License, Version 2.0.  
+See the [LICENSE](https://github.com/andstor/jsdoc-action/blob/master/LICENSE) file for more information.
