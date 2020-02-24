@@ -16,6 +16,6 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 ## 1.0.0 - 2020-02-22
 
-[Unreleased]: https://github.com/KQMATH/tex2max/compare/v1.0.2...HEAD
+[Unreleased]: https://github.com/andstor/jsdoc-action/compare/v1.0.2...HEAD
 [1.0.2]: https://github.com/andstor/jsdoc-action/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/andstor/jsdoc-action/compare/v1.0.0...v1.0.1
