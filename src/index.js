@@ -43,7 +43,7 @@ async function run() {
       args.push('-c', configPath);
     }
     if (template_name) {
-      const templatePath = path.join('./node_modules/', template_name, template_dir);
+      const templatePath = path.join(__dirname, '../node_modules/', template_name, template_dir);
       args.push('-t', templatePath);
     }
     if (front_page) {
@@ -52,9 +52,9 @@ async function run() {
     }
     args.push('-d', path.join(GITHUB_WORKSPACE, output_dir));
 
-    const actionPath = path.join(__dirname, '../');
+    //const actionPath = path.join(__dirname, '../');
     core.info(`📝 Generating documentation`);
-    await exec.exec(cmd, args, { cwd: actionPath });
+    await exec.exec(cmd, args);
     core.info(`🎉 Documentation 📖 has ben generated to the ${output_dir} folder 📁`);
   }
   catch (error) {
