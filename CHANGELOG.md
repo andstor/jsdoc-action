@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
 ## [Unreleased]
+
+## [1.1.0] - 2020-02-26
 ### Added
 - Checks for existence of files and directories specified in input variables.
 
@@ -23,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 ## 1.0.0 - 2020-02-22
 
-[Unreleased]: https://github.com/andstor/jsdoc-action/compare/v1.0.2...HEAD
+[Unreleased]: https://github.com/andstor/jsdoc-action/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/andstor/jsdoc-action/compare/v1.0.2...v1.1.0
 [1.0.2]: https://github.com/andstor/jsdoc-action/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/andstor/jsdoc-action/compare/v1.0.0...v1.0.1
