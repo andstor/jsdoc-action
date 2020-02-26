@@ -8,19 +8,30 @@ async function run() {
   try {
     const GITHUB_WORKSPACE = process.env.GITHUB_WORKSPACE;
 
-    const source_dir = core.getInput('source_dir', { required: true });
-    const recurse = core.getInput('recurse') || true;
+    const source_dir = core.getInput('source_dir');
+    const recurse = core.getInput('recurse');
     const output_dir = core.getInput('output_dir') || './out';
     const config_file = core.getInput('config_file');
     const template_name = core.getInput('template_name');
     const template_dir = core.getInput('template_dir') || '';
     const front_page = core.getInput('front_page');
 
-    if (config_file) {
+    if (source_dir) {
       try {
-        await fs.promises.access(config_file);
+        const srcPath = path.join(GITHUB_WORKSPACE, source_dir);
+        await fs.promises.access(srcPath);
       } catch (error) {
         core.setFailed('⛔️ Source directory does not exist');
+        return;
+      }
+    }
+
+    if (config_file) {
+      try {
+        const configPath = path.join(GITHUB_WORKSPACE, config_file);
+        await fs.promises.access(configPath);
+      } catch (error) {
+        core.setFailed('⛔️ Config file does not exist');
         return;
       }
     }
@@ -30,11 +41,14 @@ async function run() {
     }
 
     const jsdocPath = path.join(__dirname, '../node_modules/jsdoc/jsdoc.js');
-    const srcPath = path.join(GITHUB_WORKSPACE, source_dir);
 
     let cmd = 'node';
-    let args = [jsdocPath, srcPath];
+    let args = [jsdocPath];
 
+    if (source_dir) {
+      const srcPath = path.join(GITHUB_WORKSPACE, source_dir);
+      args.push(srcPath);
+    }
     if (recurse) {
       args.push('-r');
     }
@@ -52,7 +66,6 @@ async function run() {
     }
     args.push('-d', path.join(GITHUB_WORKSPACE, output_dir));
 
-    //const actionPath = path.join(__dirname, '../');
     core.info(`📝 Generating documentation`);
     await exec.exec(cmd, args);
     core.info(`🎉 Documentation 📖 has ben generated to the ${output_dir} folder 📁`);
