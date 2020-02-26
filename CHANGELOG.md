@@ -6,11 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 ## [Unreleased]
 ### Added
-- Checks for existence of files specified in input variables.
+- Checks for existence of files and directories specified in input variables.
 
 ### Changed
 - Make the `source_dir` input variable optional.
-- Remove default value of the `recurse` input variable.
+- Don't set default value of the `recurse` input variable.
+- Don't set default value of the `output_dir` input variable.
 
 ## [1.0.2] - 2020-02-24
 ### Fixed
