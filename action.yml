@@ -7,15 +7,13 @@ branding:
 inputs:
   source_dir:
     description: 'Source directory to build documentation from'
-    required: true
+    required: false
   output_dir:
     description: 'Output folder for the generated documentation'
     required: false
-    default: './out'
   recurse:
     description: 'Recurse into subdirectories when scanning for source files'
     required: false
-    default: true
   config_file:
     description: 'The path to a JSDoc configuration file'
     required: false
