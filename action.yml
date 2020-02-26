@@ -11,7 +11,6 @@ inputs:
   output_dir:
     description: 'Output folder for the generated documentation'
     required: false
-    default: './out'
   recurse:
     description: 'Recurse into subdirectories when scanning for source files'
     required: false

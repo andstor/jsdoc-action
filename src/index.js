@@ -10,7 +10,7 @@ async function run() {
 
     const source_dir = core.getInput('source_dir');
     const recurse = core.getInput('recurse');
-    const output_dir = core.getInput('output_dir') || './out';
+    const output_dir = core.getInput('output_dir');
     const config_file = core.getInput('config_file');
     const template_name = core.getInput('template_name');
     const template_dir = core.getInput('template_dir') || '';
@@ -64,7 +64,9 @@ async function run() {
       let readmePath = path.join(GITHUB_WORKSPACE, front_page);
       args.push('-R', readmePath);
     }
-    args.push('-d', path.join(GITHUB_WORKSPACE, output_dir));
+    if(output_dir) {
+      args.push('-d', path.join(GITHUB_WORKSPACE, output_dir));
+    }
 
     core.info(`📝 Generating documentation`);
     await exec.exec(cmd, args);
