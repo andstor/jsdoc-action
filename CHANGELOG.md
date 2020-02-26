@@ -5,6 +5,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
 ## [Unreleased]
+### Added
+- Checks for existence of files specified in input variables.
+
+### Changed
+- Make the `source_dir` input variable optional.
+- Remove default value of the `recurse` input variable.
 
 ## [1.0.2] - 2020-02-24
 ### Fixed

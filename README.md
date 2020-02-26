@@ -11,6 +11,7 @@ The following example [workflow step](https://help.github.com/en/actions/configu
   uses: andstor/jsdoc-action@v1
   with:
     source_dir: ./src
+    recurse: true
     output_dir: ./out
 ```
 
@@ -28,9 +29,9 @@ The following input variables options can/must be configured:
 
 |Input variable|Necessity|Description|Default|
 |----|----|----|----|
-|`source_dir`|Required|Source directory to build documentation from.||
+|`source_dir`|Optional|Source directory to build documentation from.||
 |`output_dir`|Optional|Output folder for the generated documentation.|`./out`|
-|`recurse`|Optional|Recurse into subdirectories when scanning for source files.|`true`|
+|`recurse`|Optional|Recurse into subdirectories when scanning for source files.||
 |`config_file`|Optional|The path to a JSDoc configuration file.||
 |`template_name`|Optional|The name of a JSDoc template package to install. Will run a `npm install template_name`.||
 |`template_dir`|Optional|The relative location of the template files directory within the template package.||
