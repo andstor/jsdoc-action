@@ -17,8 +17,11 @@ inputs:
   config_file:
     description: 'The path to a JSDoc configuration file'
     required: false
+  template:
+    description: 'The JSDoc template to install'
+    required: false
   template_name:
-    description: 'The name of a JSDoc template to install'
+    description: 'This input variable is deprecated in favour of "template"'
     required: false
   template_dir:
     description: 'The relative location of the template files within the template package'

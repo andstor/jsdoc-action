@@ -6,15 +6,22 @@ const installer = require('./installer');
 
 async function run() {
   try {
+    let templateName;
+
     const GITHUB_WORKSPACE = process.env.GITHUB_WORKSPACE;
 
     const source_dir = core.getInput('source_dir');
     const recurse = core.getInput('recurse');
     const output_dir = core.getInput('output_dir');
     const config_file = core.getInput('config_file');
-    const template_name = core.getInput('template_name');
-    const template_dir = core.getInput('template_dir') || '';
+    const input_template_name = core.getInput('template_name'); // Deprecated in favor of "template".
+    const template = core.getInput('template') || input_template_name;
+    const template_dir = core.getInput('template_dir');
     const front_page = core.getInput('front_page');
+
+    if (input_template_name) {
+      core.warning(`❗The "template_name" input variable is deprecated in favor of "template"`);
+    }
 
     if (source_dir) {
       try {
@@ -36,8 +43,8 @@ async function run() {
       }
     }
 
-    if (template_name) {
-      await installer.install(template_name);
+    if (template) {
+      templateName = await installer.installTemplate(template);
     }
 
     const jsdocPath = path.join(__dirname, '../node_modules/jsdoc/jsdoc.js');
@@ -56,8 +63,8 @@ async function run() {
       const configPath = path.join(GITHUB_WORKSPACE, config_file);
       args.push('-c', configPath);
     }
-    if (template_name) {
-      const templatePath = path.join(__dirname, '../node_modules/', template_name, template_dir);
+    if (template) {
+      const templatePath = path.join(__dirname, '../node_modules/', templateName, template_dir);
       args.push('-t', templatePath);
     }
     if (front_page) {
