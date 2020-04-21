@@ -33,18 +33,18 @@ The following input variables options can/must be configured:
 |`output_dir`|Optional|Output folder for the generated documentation.|`./out`|
 |`recurse`|Optional|Recurse into subdirectories when scanning for source files.|`false`|
 |`config_file`|Optional|The path to a JSDoc configuration file.||
-|`template_name`|Optional|The name of a JSDoc template package to install. Will run a `npm install template_name`.||
+|`template`|Optional|The JSDoc template package to install. Will run a `npm install template`.||
 |`template_dir`|Optional|The relative location of the template files directory within the template package.||
 |`front_page`|Optional|The path to a Markdown file to be used as a the front page. Normally `README.md`.||
 
 ## Templates 💅
 
 You can use JSDoc [templates](https://github.com/jsdoc/jsdoc#templates) with this action.  
-Just set the `template_name` input variable to the name of the template you want to use. This needs to be template's package name.
+Just set the `template` input variable to the name of the template you want to use. This needs to be template's package name.
 
 If the template's template files is located somewhere else than the package's root, you need to specify this. Set the `template_dir` input variable to the location of the template folder (contains a `publish.js` file).
 
-For example, to use the JSDoc [DocStrap](https://github.com/docstrap/docstrap) template, set the `template_name` to `ink-docstrap` and the `template_dir` to `template`.
+For example, to use the JSDoc [DocStrap](https://github.com/docstrap/docstrap) template, set the `template` input variable to `ink-docstrap` and the `template_dir` to the string `template`.
 
 ## JSDoc Configuration file 📄
 
@@ -79,7 +79,7 @@ jobs:
           source_dir: ./src
           output_dir: ./out
           config_file: conf.json
-          template_name: minami
+          template: minami
           front_page: README.md
 
       - name: Deploy
