@@ -32,6 +32,7 @@ async function installTemplate(template) {
     core.debug(`Installation output: ${installOutput}`);
 
     let parsedString = installOutput.trim().split(/\s+/);
+    console.log(parsedString)
     let packageLocation = parsedString[parsedString.length - 1]; // node_modules/folder
     const filePath = path.join(__dirname, packageLocation + '/package.json');
     templateName = await utils.getPackageName(filePath);
