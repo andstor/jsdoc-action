@@ -5,7 +5,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
 ## [Unreleased]
+### Changed
+- Deprecates the `template_name` input variable in favor of `template`.
+
+### Fixed
+- Correct handling of templates installed from other sources than the npm package registry.
+
 ### Added
+- Ability to install a specific version of a template.
 - Automatic updating of major version tag on release.
 
 ## [1.1.0] - 2020-02-26
