@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org).
 
 ## [Unreleased]
+
+## [1.2.0] - 2020-04-21
 ### Changed
 - Deprecates the `template_name` input variable in favor of `template`.
 
@@ -13,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 ### Added
 - Ability to install a specific version of a template.
-- Automatic updating of major version tag on release.
+- Automatic updating of major version tag on release (GitHub Action).
 
 ## [1.1.0] - 2020-02-26
 ### Added
@@ -34,7 +36,8 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 ## 1.0.0 - 2020-02-22
 
-[Unreleased]: https://github.com/andstor/jsdoc-action/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/andstor/jsdoc-action/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/andstor/jsdoc-action/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/andstor/jsdoc-action/compare/v1.0.2...v1.1.0
 [1.0.2]: https://github.com/andstor/jsdoc-action/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/andstor/jsdoc-action/compare/v1.0.0...v1.0.1
