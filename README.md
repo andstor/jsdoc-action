@@ -33,7 +33,7 @@ The following input variables options can/must be configured:
 |`output_dir`|Optional|Output folder for the generated documentation.|`./out`|
 |`recurse`|Optional|Recurse into subdirectories when scanning for source files.|`false`|
 |`config_file`|Optional|The path to a JSDoc configuration file.||
-|`template`|Optional|The JSDoc template package to install. Will run a `npm install template`.||
+|`template`|Optional|The JSDoc template package to install. Will run `npm install template`.||
 |`template_dir`|Optional|The relative location of the template files directory within the template package.||
 |`front_page`|Optional|The path to a Markdown file to be used as a the front page. Normally `README.md`.||
 
