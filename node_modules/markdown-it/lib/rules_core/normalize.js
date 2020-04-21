@@ -3,11 +3,12 @@
 'use strict';
 
 
-var NEWLINES_RE  = /\r[\n\u0085]?|[\u2424\u2028\u0085]/g;
-var NULL_RE      = /\u0000/g;
+// https://spec.commonmark.org/0.29/#line-ending
+var NEWLINES_RE  = /\r\n?|\n/g;
+var NULL_RE      = /\0/g;
 
 
-module.exports = function inline(state) {
+module.exports = function normalize(state) {
   var str;
 
   // Normalize newlines
