@@ -3,6 +3,7 @@ const exec = require('@actions/exec');
 const fs = require('fs');
 const path = require('path');
 const installer = require('./installer');
+const utils = require('./utils');
 
 async function run() {
   try {
@@ -57,7 +58,9 @@ async function run() {
       args.push('-c', configPath);
     }
     if (template_name) {
-      const templatePath = path.join(__dirname, '../node_modules/', template_name, template_dir);
+      const packageJsonPath = path.join(__dirname, '../node_modules/jsdoc/package.json');
+      const trueTemplateName = await utils.getPackageName(packageJsonPath);
+      const templatePath = path.join(__dirname, '../node_modules/', trueTemplateName, template_dir);
       args.push('-t', templatePath);
     }
     if (front_page) {
