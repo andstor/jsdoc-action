@@ -13,6 +13,7 @@ const utils = require('./utils');
 async function installTemplate(template) {
     let templateName = '';
     const actionDir = path.join(__dirname, '../');
+    core.debug(`actionDir: ${actionDir}`);
 
     let cmd = 'npm';
     let args = ['install', template, '--production', '--parseable'];
@@ -21,16 +22,21 @@ async function installTemplate(template) {
     await exec.exec(cmd, args);
 
     let lsOutput = '';
+    let lsError = '';
     const options = {};
     options.listeners = {
         stdout: (data) => {
             lsOutput += data.toString();
+        },
+        stderr: (data) => {
+            lsError += data.toString();
         }
     };
     options.cwd = actionDir;
     await exec.exec('npm', ['ls', template, '-ps'], options);
     core.debug(`Template location: ${lsOutput}`);
-    let packageLocation = lsOutput.trim(); // node_modules/folder
+    if (lsError) core.info(`Error: ${lsError}`);
+    let packageLocation = lsOutput.trim(); // path/to/template
     
     const filePath = path.join(packageLocation + '/package.json');
     templateName = await utils.getPackageName(filePath);
