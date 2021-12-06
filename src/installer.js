@@ -33,7 +33,7 @@ async function installTemplate(template) {
         }
     };
     options.cwd = actionDir;
-    await exec.exec('npm', ['ls', template, '-ps'], options);
+    await exec.exec('npm', ['ls', template, '-p'], options);
     core.debug(`Template location: ${lsOutput}`);
     if (lsError) core.info(`Error: ${lsError}`);
     let packageLocation = lsOutput.trim(); // path/to/template
