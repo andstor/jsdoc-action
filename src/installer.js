@@ -18,22 +18,21 @@ async function installTemplate(template) {
     let args = ['install', template, '--production', '--parseable'];
     core.info(`Installing JSDoc template: ${template}`);
     core.debug(`Command: ${cmd} ${args}`);
+    await exec.exec(cmd, args);
 
-    let installOutput = '';
+    let lsOutput = '';
     const options = {};
     options.listeners = {
         stdout: (data) => {
-            installOutput += data.toString();
+            lsOutput += data.toString();
         }
     };
     options.cwd = actionDir;
-
-    await exec.exec(cmd, args, options);
-    core.debug(`Installation output: ${installOutput}`);
-
-    let parsedString = installOutput.trim().split(/\s+/);
-    let packageLocation = parsedString[parsedString.length - 1]; // node_modules/folder
-    const filePath = path.join(actionDir, packageLocation + '/package.json');
+    await exec.exec('npm', ['ls', template, '-ps'], options);
+    core.debug(`Template location: ${lsOutput}`);
+    let packageLocation = lsOutput.trim(); // node_modules/folder
+    
+    const filePath = path.join(packageLocation + '/package.json');
     templateName = await utils.getPackageName(filePath);
 
     return templateName;
