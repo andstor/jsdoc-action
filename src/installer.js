@@ -19,11 +19,14 @@ async function installTemplate(template) {
     let args = ['install', template, '--production', '--parseable'];
     core.info(`Installing JSDoc template: ${template}`);
     core.debug(`Command: ${cmd} ${args}`);
-    await exec.exec(cmd, args);
 
+
+    const options = {};
+    options.cwd = actionDir;
+    await exec.exec(cmd, args, options);
+    
     let lsOutput = '';
     let lsError = '';
-    const options = {};
     options.listeners = {
         stdout: (data) => {
             lsOutput += data.toString();
@@ -32,7 +35,7 @@ async function installTemplate(template) {
             lsError += data.toString();
         }
     };
-    options.cwd = actionDir;
+    
     await exec.exec('npm', ['ls', template, '-p'], options);
     core.debug(`Template location: ${lsOutput}`);
     if (lsError) core.info(`Error: ${lsError}`);
