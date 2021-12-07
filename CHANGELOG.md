@@ -11,7 +11,6 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 ### Fixed
 - Support template installation with Node.js 16 ([#40](https://github.com/andstor/jsdoc-action/issues/40)).
 
-
 ## [1.2.0] - 2020-04-21
 ### Changed
 - Deprecates the `template_name` input variable in favor of `template`.
