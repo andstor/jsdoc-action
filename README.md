@@ -17,7 +17,7 @@ The following example [workflow step](https://help.github.com/en/actions/configu
 
 ## Supported platforms
 
-The jsdoc-action is a JavaScript action and is supported on both Linux, MacOS and Windows.
+The jsdoc-action is a JavaScript action and is supported on both Linux, MacOS and Windows. The action supports stable versions of Node.js 14 and later. 
 
 | OS (runs-on) | ubuntu-latest | macos-latest | windows-latest |
 |---|:---:|:---:|:---:|
