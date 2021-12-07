@@ -2,7 +2,7 @@
 
 > A GitHub Action to build JSDoc documentation
 
-This is a GitHub Action to build your JavaScript documentation with [JSDoc](https://github.com/jsdoc/jsdoc). This action can easily be combined with other deployment actions, in order to publish the generated documentation to for example [GitHub Pages](https://pages.github.com). JSDoc [templates](https://github.com/jsdoc/jsdoc#templates) are aslo supported.
+This is a GitHub Action to build your JavaScript documentation with [JSDoc](https://github.com/jsdoc/jsdoc). This action can easily be combined with other deployment actions, in order to publish the generated documentation to for example [GitHub Pages](https://pages.github.com). JSDoc [templates](https://github.com/jsdoc/jsdoc#templates) are also supported.
 
 The following example [workflow step](https://help.github.com/en/actions/configuring-and-managing-workflows/configuring-a-workflow) will generate documentation for all source files in the `./src` directory and output the built files to the `./out` directory.
 
@@ -17,7 +17,7 @@ The following example [workflow step](https://help.github.com/en/actions/configu
 
 ## Supported platforms
 
-The jsdoc-action is a JavaScript action and is supported on both Linux, MacOS and Windows.
+The jsdoc-action is a JavaScript action and is supported on both Linux, MacOS and Windows. The action supports stable versions of Node.js 14 and later. 
 
 | OS (runs-on) | ubuntu-latest | macos-latest | windows-latest |
 |---|:---:|:---:|:---:|
@@ -54,9 +54,9 @@ To use a JSDoc [configuration file](https://jsdoc.app/about-configuring-jsdoc.ht
 
 ### GitHub Pages 🚀
 
-An example for deploying JSDoc generated documentationto GitHub Pages with [actions-gh-pages](https://github.com/marketplace/actions/github-pages-action#table-of-contents).
+An example for deploying JSDoc generated documentation to GitHub Pages with [actions-gh-pages](https://github.com/marketplace/actions/github-pages-action#table-of-contents).
 
-This jsdoc-action workflow configuration uses the [Minami](https://github.com/nijikokun/minami) JSDoc template and uses the root `README.md` file as frontpage.
+This jsdoc-action workflow configuration uses the [Minami](https://github.com/nijikokun/minami) JSDoc template and uses the root `README.md` file as the front page.
 
 ```yml
 name: GitHub pages

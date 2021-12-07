@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 ## [Unreleased]
 
+
+## [1.2.1] - 2021-12-07
+### Fixed
+- Support template installation with Node.js 16 ([#40](https://github.com/andstor/jsdoc-action/issues/40)).
+
 ## [1.2.0] - 2020-04-21
 ### Changed
 - Deprecates the `template_name` input variable in favor of `template`.
@@ -36,7 +41,8 @@ and this project adheres to [Semantic Versioning](https://semver.org).
 
 ## 1.0.0 - 2020-02-22
 
-[Unreleased]: https://github.com/andstor/jsdoc-action/compare/v1.2.0...HEAD
+[Unreleased]: https://github.com/andstor/jsdoc-action/compare/v1.2.1...HEAD
+[1.2.1]: https://github.com/andstor/jsdoc-action/compare/v1.2.0...v1.2.1
 [1.2.0]: https://github.com/andstor/jsdoc-action/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/andstor/jsdoc-action/compare/v1.0.2...v1.1.0
 [1.0.2]: https://github.com/andstor/jsdoc-action/compare/v1.0.1...v1.0.2
